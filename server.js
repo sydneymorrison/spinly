@@ -3,9 +3,23 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//OAuth Session
+var session = require('express-session');
+
+TODO: //Add Database
+
+//Require Passport
+var passport = require('passport');
+
+//Require Google AuthStrategy
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+//Load the "secrets" in the .env file
+require('dotenv').config();
+
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var vinylsRouter = require('./routes/vinyls');
 
 var app = express();
 
@@ -19,8 +33,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Configure Session Middleware
+app.use(session({
+  secret: process.env.SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
+//Mount Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Req.user to all views - Add this middleware BELOW passport middleware
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/vinyls', vinylsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
