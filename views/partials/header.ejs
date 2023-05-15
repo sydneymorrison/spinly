@@ -9,8 +9,17 @@
 </head>
 <body>
     <nav>
-        <a href="/vinyls" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+        <!-- //Link for Feed Page  -->
+        <a href="/vinyls"	<%- title === 'View Vinyls' ? 'class="active"' : '' %>>
+          VIEW VINYLS</a>
+
+        <!-- //Link for Profile Page  -->
+        <a href="/vinyls/:id"	<%- title === 'View PROFILE' ? 'class="active"' : '' %>>
+          VIEW PROFILE</a>
+
+        <a href="/index" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5zAa1Qoj6t1Mni_-A9zvCKNPTzQD0VYre8RDvBiBrg&s"></a>
-    </nav>
+ 
+      </nav>
 </body>
 </html>
