@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %></title>
+</head>
+<body>
+    <nav>
+        <a href="/vinyls" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5zAa1Qoj6t1Mni_-A9zvCKNPTzQD0VYre8RDvBiBrg&s"></a>
+    </nav>
+</body>
+</html>

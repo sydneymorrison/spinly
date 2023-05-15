@@ -6,8 +6,9 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'spinly' });
 });
+
 
 
 TODO: //How do I request phonenumber? 
@@ -29,8 +30,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/spinly',
-    failureRedirect: '/spinly'
+    successRedirect: '/index',
+    failureRedirect: '/index'
   }
 ));
 
@@ -38,7 +39,7 @@ router.get('/oauth2callback', passport.authenticate(
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/movies');
+    res.redirect('/index');
   });
 });
 

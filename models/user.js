@@ -1,5 +1,6 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-TODO: //Check to see if I can integrate number
 
 const userSchema = new Schema({
     name: String,
@@ -12,4 +13,6 @@ const userSchema = new Schema({
   }, {
     timestamps: true
   });
+
+  module.exports = mongoose.model('User', userSchema);
 

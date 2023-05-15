@@ -5,21 +5,22 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //OAuth Session
 var session = require('express-session');
-
-TODO: //Add Database
-
 //Require Passport
 var passport = require('passport');
-
-//Require Google AuthStrategy
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 //Load the "secrets" in the .env file
 require('dotenv').config();
 
+TODO: //Add Database
 
-var indexRouter = require('./routes/index');
-var vinylsRouter = require('./routes/vinyls');
+require('./config/passport');
+
+// //Require Google AuthStrategy
+// const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+
+
+const indexRouter = require('./routes/index');
+const vinylsRouter = require('./routes/vinyls');
 
 var app = express();
 
@@ -50,7 +51,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-
+//App Routers
 app.use('/', indexRouter);
 app.use('/vinyls', vinylsRouter);
 
