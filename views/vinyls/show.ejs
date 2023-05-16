@@ -1,9 +1,34 @@
 <%- include('../partials/header') %>
 
+<section id="vinyl-details-heading">
+
+    <!-- Profile Start -->
+    <% if (typeof user !== 'undefined' && user !== null) { %>
+        <div><%= user.name %></div>
+        <div class="vinyl-user">
+        <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+        </div>
+    <% } %>
+  </section>
 
 
-
-
+  <!-- Vinyl Details -->
+     <section class="vinyl-details">
+        <div>Title: </div>
+        <div><%= vinyl.title %></div>
+        <div>Artist: </div>
+        <div><%= vinyl.artist %></div>
+        <div>Release Year: </div>
+        <div><%= vinyl.releaseYear %></div>
+        <div>Genre: </div>
+        <div><%= vinyl.genre %></div>
+        <div>Condition: </div>
+        <div><%= vinyl.condition %></div>
+        <div>Exchange Type: </div>
+        <div><%= vinyl.exchangeType %></div>
+        <div>Price: </div>
+        <div><%= vinyl.price %></div>
+    </section>
 
 <%- include('../partials/footer') %>
 

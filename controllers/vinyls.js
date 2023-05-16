@@ -1,10 +1,13 @@
 //Require the vinyl model
 const Vinyl = require('../models/vinyl');
+const User = require('../models/user');
+
 
 module.exports = {
     index,
     new: newVinyl,
-    create
+    create,
+    show
 };
 
 async function index(req, res) {
@@ -44,4 +47,16 @@ async function create(req, res) {
         console.log(err);
         res.render('vinyls/new', { errorMsg: err.message });
     }   
+}
+
+
+async function show(req, res) {
+   try{
+    const vinyl = await Vinyl.findById(req.params.id);
+    const user = req.user;
+    res.render('vinyls/show', { title: 'Vinyl Details', vinyl, user })
+} catch (err) {
+    console.log(err);
+    res.render('error', { errorMsg: 'Failed to retrieve vinyl details.' });
+}
 }

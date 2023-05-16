@@ -3,7 +3,7 @@
 
 
 
-<section id="profile-page">
+<section id="form-page">
   <!-- Profile Start -->
   <div><%= user.name %></div>
   <div class="vinyl-user">
@@ -74,10 +74,10 @@
 
             if (exchangeType.value === 'Sell') {
                 priceField.style.display = 'block';
-                document.getElementByName('price')[0].readOnly = false;
+                document.getElementsByName('price')[0].readOnly = false;
             } else {
                 priceField.style.display = 'none';
-                document.getElementByName('price')[0].readOnly = true;
+                document.getElementsByName('price')[0].readOnly = true;
             }
  } 
 </script>
