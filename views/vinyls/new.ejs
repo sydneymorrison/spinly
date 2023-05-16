@@ -1,1 +1,40 @@
+<%- include('../partials/header') %>
 
+<h1><%= title %></h1>
+
+<section id="profile-page">
+  <!-- Profile Start -->
+  <div><%= user.name %></div>
+  <div class="vinyl-user"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" ></div>
+</section>
+
+<!-- Record Submission Form -->
+<form id="add-vinyl-submission-form" method="POST"
+  action="/movies/new">
+  <label>Title:</label>
+  <input type="text" name="title"><br>
+  <label>Artist:</label>
+  <input type="text" name="artist"><br>
+  <label>Release Year:</label>
+  <input type="text" name="releaseYear"><br>
+  <label>Genre:</label>
+  <input type="text" name="genre"><br>
+  <label>Condition:</label>
+  <select name="condition">
+    <option value="Poor">Poor</option>
+    <option value="Fair">Fair</option>
+    <option value="Good">Good</option>
+    <option value="Very Good">Very Good</option>
+    <option value="Mint" selected>Mint</option>
+  </select><br>
+  <label>Exchange Type:</label>
+  <select name="exchangeType">
+    <option value="Trade">Poor</option>
+    <option value="Sell">Fair</option>
+    <option value="Buy">Good</option>
+  </select><br>
+    <input type="submit" value="Add Record">
+</form>
+
+
+<%- include('../partials/footer') %>

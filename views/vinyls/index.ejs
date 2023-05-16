@@ -1,21 +1,20 @@
 <%- include('../partials/header') %>
 
-
 <section>
+<h1><%= title %></h1>
 <div>
+    <% vinyls.forEach(function(v) { %>
     <ul>
-        <li>Avatar</li>
-        <li>Username</li>
-        <li>Album Cover</li>
-        <li>Exchange Type</li>
+        <li class="vinyl-user"><img alt="avatar" src="<%= v.userAvatar %>" referrerpolicy="no-referrer" ><%= v.userName %></td>
+        <li><%=v.title%></li>
+        <li><%=v.userName%></li>
+        <li><%=v.artist%></li>
+        <li><%=v.condition%></li>
+        <li><%=v.exchangeType%></li>
       </ul>
+      <% }); %>
 </div>
 </section>
-
-
-<a href="/vinyls/<%= vinyls._id %>/movies/new">
-    <button>Add Record</button>
-  </a>
 
 
 <%- include('../partials/footer') %>

@@ -11,4 +11,11 @@ const vinylsController = require('../controllers/vinyls');
 router.get('/', vinylsController.index)
 
 
+//GET /vinyls/new
+//Return view (form) to add a new post
+router.get('/new', vinylsController.new)
+
+
+
+
 module.exports = router;

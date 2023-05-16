@@ -11,10 +11,10 @@
     <nav>
       <% if (user) { %>
         <!-- //Link for Feed Page  -->
-        <a href="/vinyls/index"	<%- title === 'View Vinyls' ? 'class="active"' : '' %>>VIEW VINYLS</a>
+        <a href="/vinyls"	<%- title === 'View Vinyls' ? 'class="active"' : '' %>>VIEW VINYLS</a>
 
         <!-- //Link for Profile Page  -->
-        <a href="/vinyls/:id"	<%- title === 'View PROFILE' ? 'class="active"' : '' %>>VIEW PROFILE</a>
+        <a href="/vinyls/new"	<%- title === 'View PROFILE' ? 'class="active"' : '' %>>VIEW PROFILE</a>
         
         <a href="/index" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
         <a href="/logout">LOG OUT</a>
