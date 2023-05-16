@@ -10,6 +10,10 @@ const vinylsController = require('../controllers/vinyls');
 //I want to get a list of all vinyls from all users on the /vinyls page
 router.get('/', vinylsController.index);
 
+//GET /vinyls
+//Show I want to show the profile page of the person who posted the record
+
+
 
 //GET /vinyls/new
 //Return view (form) to add a new post
