@@ -9,17 +9,18 @@
 </head>
 <body>
     <nav>
+      <% if (user) { %>
         <!-- //Link for Feed Page  -->
-        <a href="/vinyls"	<%- title === 'View Vinyls' ? 'class="active"' : '' %>>
-          VIEW VINYLS</a>
+        <a href="/vinyls/index"	<%- title === 'View Vinyls' ? 'class="active"' : '' %>>VIEW VINYLS</a>
 
         <!-- //Link for Profile Page  -->
-        <a href="/vinyls/:id"	<%- title === 'View PROFILE' ? 'class="active"' : '' %>>
-          VIEW PROFILE</a>
-
+        <a href="/vinyls/:id"	<%- title === 'View PROFILE' ? 'class="active"' : '' %>>VIEW PROFILE</a>
+        
         <a href="/index" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+        <a href="/logout">LOG OUT</a>
+      <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5zAa1Qoj6t1Mni_-A9zvCKNPTzQD0VYre8RDvBiBrg&s"></a>
- 
-      </nav>
+        <% } %>
+    </nav>
 </body>
 </html>

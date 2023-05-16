@@ -63,7 +63,7 @@ const vinylSchema = new Schema ({
         ref: 'User',
         required: true
     },
-    username: String,
+    userName: String,
     userAvatar: String,
     reviews: [reviewSchema]
 }, {

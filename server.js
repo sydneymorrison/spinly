@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 //OAuth Session
 var session = require('express-session');
 //Require Passport
@@ -12,12 +13,12 @@ var passport = require('passport');
 require('dotenv').config();
 
 TODO: //Add Database
+require('./config/database');
 
 require('./config/passport');
 
 // //Require Google AuthStrategy
 // const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-
 
 const indexRouter = require('./routes/index');
 const vinylsRouter = require('./routes/vinyls');

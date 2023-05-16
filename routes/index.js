@@ -30,8 +30,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/index',
-    failureRedirect: '/index'
+    successRedirect: '/',
+    failureRedirect: '/'
   }
 ));
 
@@ -39,7 +39,7 @@ router.get('/oauth2callback', passport.authenticate(
 // OAuth logout route
 router.get('/logout', function(req, res){
   req.logout(function() {
-    res.redirect('/index');
+    res.redirect('/');
   });
 });
 
