@@ -89,21 +89,23 @@ const vinylSchema = new Schema ({
         type: Number,
         min: 0
     },
-    userId: {
+
+    //Track the UserId from the User Model (Google)
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
     userName: String,
     userAvatar: String,
-    reviews: [reviewSchema],
+    userSeller: String,
+    reviews: [reviewSchema]
     
-    //Add User Model to reference
-    userVinyl: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  }
+//     //Track the Seller from the User Model
+//     vinylSeller: {
+//     type: Schema.Types.ObjectId,
+//     ref: 'User'
+//   }
 }, {
     timestamps: true
 });

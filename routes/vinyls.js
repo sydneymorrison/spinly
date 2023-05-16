@@ -18,7 +18,7 @@ router.get('/new', vinylsController.new);
 
 //POST /vinyls
 //Create a Record and display it on show page
-router.get('/', vinylsController.create);
+router.post('/', vinylsController.create);
 
 
 

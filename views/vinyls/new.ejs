@@ -1,11 +1,14 @@
 <%- include('../partials/header') %>
 
-<h1><%= title %></h1>
+
+
 
 <section id="profile-page">
   <!-- Profile Start -->
   <div><%= user.name %></div>
-  <div class="vinyl-user"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" ></div>
+  <div class="vinyl-user">
+    <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+  </div>
 </section>
 
 <!-- Record Submission Form -->
@@ -49,18 +52,34 @@
     <option value="Mint" selected>Mint</option>
   </select><br>
   <label>Exchange Type:</label>
-  <select name="exchangeType">
+  <select name="exchangeType" onchange="togglePriceField()">
     <option value="Trade">Trade</option>
     <option value="Sell">Sell</option>
     <option value="Buy">Buy</option>
   </select><br>
-  <label>Price:</label>
-  <input type="text" name="price"><br>
+  <div id="priceField" >
+    <label>Price:</label>
+    <input type="text" name="price" readonly><br>
+  </div>
   <!-- Add Vinyl Button -->
   <input type="submit" value="Add Record">
 </form>
 
 
 <!-- Javascript for price display function  -->
+<script>
+ function togglePriceField() { 
+            const priceField = document.getElementById('priceField');
+            const exchangeType = document.getElementsByName('exchangeType')[0];
+
+            if (exchangeType.value === 'Sell') {
+                priceField.style.display = 'block';
+                document.getElementByName('price')[0].readOnly = false;
+            } else {
+                priceField.style.display = 'none';
+                document.getElementByName('price')[0].readOnly = true;
+            }
+ } 
+</script>
 
 <%- include('../partials/footer') %>
