@@ -2,19 +2,35 @@
 
 <section>
 <h1><%= title %></h1>
-<div>
-    <% vinyls.forEach(function(v) { %>
-    <ul>
-        <li class="vinyl-user"><img alt="avatar" src="<%= v.userAvatar %>" referrerpolicy="no-referrer" ><%= v.userName %></td>
-        <li><%=v.title%></li>
-        <li><%=v.userName%></li>
-        <li><%=v.artist%></li>
-        <li><%=v.condition%></li>
-        <li><%=v.exchangeType%></li>
-      </ul>
-      <% }); %>
-</div>
-</section>
+
+<table id="list">
+    <thead>
+      <tr>
+        <th class="th">Title</th>
+        <th class="th">Artist</th>
+        <th class="th">Release Year</th>
+        <th class="th">Genre</th>
+        <th class="th">Condition</th>
+        <th class="th">Exchange Type</th>
+        <th class="th">Price</th>
+
+      </tr>
+    </thead>
+    <tbody>
+    <% vinyls.forEach(function(v){ %>
+        <tr>
+            <td class="td"><%= v.title %></td>
+            <td class="td"> <%= v.artist %></td>
+            <th class="th"><%= v.releaseYear %></th>
+            <td class="td"><%= v.genre %></td>
+            <td class="td"><%= v.condition %></td>
+            <td class="td"><%= v.exchangeType %></td>
+            <td class="td"><%= v.price %></td>
+
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
 
 
 <%- include('../partials/footer') %>

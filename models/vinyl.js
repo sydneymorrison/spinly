@@ -25,7 +25,13 @@ const reviewSchema = new Schema ({
     postedAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    //Add User Model to reference
+    userReview: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }
 }, {
     timestamps: true
 });
@@ -48,7 +54,28 @@ const vinylSchema = new Schema ({
       },
     genre: {
         type: String,
-        required: true
+        enum: [
+            'Pop',
+            'Rock',
+            'Hip Hop',
+            'R&B (Rhythm and Blues)',
+            'Country',
+            'Jazz',
+            'Electronic',
+            'Alternative',
+            'Indie',
+            'Metal',
+            'Punk',
+            'Reggae',
+            'Classical',
+            'Blues',
+            'Funk',
+            'Soul',
+            'Folk',
+            'Dance',
+            'Gospel',
+            'World'
+          ]
     },
     condition: {
         type: String,
@@ -58,6 +85,10 @@ const vinylSchema = new Schema ({
         type: String,
         enum: ['Trade', 'Sell', 'Buy']
     },
+    price: {
+        type: Number,
+        min: 0
+    },
     userId: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -65,7 +96,14 @@ const vinylSchema = new Schema ({
     },
     userName: String,
     userAvatar: String,
-    reviews: [reviewSchema]
+    reviews: [reviewSchema],
+    
+    //Add User Model to reference
+    userVinyl: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }
 }, {
     timestamps: true
 });

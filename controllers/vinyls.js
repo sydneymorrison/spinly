@@ -3,7 +3,8 @@ const Vinyl = require('../models/vinyl');
 
 module.exports = {
     index,
-    new: newVinyl
+    new: newVinyl,
+    create
 };
 
 async function index(req, res) {
@@ -19,4 +20,14 @@ async function newVinyl(req,res) {
         username: user.name,
         avatar: user.avatar
      }); 
+}
+
+async function create(req, res) {
+    try {
+      const vinyl = await Vinyl.create(req.body);
+      res.redirect('/vinyls');
+    } catch (err) {
+        console.log(err);
+        res.render('vinyls/new', { errorMsg: err.message });
+    }   
 }

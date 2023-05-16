@@ -10,13 +10,19 @@
 <body>
     <nav>
       <% if (user) { %>
-        <!-- //Link for Feed Page  -->
-        <a href="/vinyls"	<%- title === 'View Vinyls' ? 'class="active"' : '' %>>VIEW VINYLS</a>
-
-        <!-- //Link for Profile Page  -->
-        <a href="/vinyls/new"	<%- title === 'View PROFILE' ? 'class="active"' : '' %>>VIEW PROFILE</a>
-        
+        <!-- //About Page  -->
         <a href="/index" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+        
+        <!-- //Link for Feed Page  -->
+        <a href="/vinyls"	<%- title === 'Vinyl Feed' ? 'class="active"' : '' %>>VINYL FEED</a>
+
+
+        <!-- //Link for New Vinyl Page  -->
+        <a href="/vinyls/new"	<%- title === 'Add New Vinyl' ? 'class="active"' : '' %>>ADD VINYL</a>
+        
+        <!-- //Link for Profile Page  -->
+  
+
         <a href="/logout">LOG OUT</a>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5zAa1Qoj6t1Mni_-A9zvCKNPTzQD0VYre8RDvBiBrg&s"></a>
