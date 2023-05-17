@@ -24,6 +24,10 @@ router.get('/new', ensureLoggedIn, vinylsController.new);
 //Create a Record and display it on show page
 router.post('/', ensureLoggedIn, vinylsController.create);
 
+//Edit
+//GET /vinyls:id/edit
+router.get('/:id/edit', vinylsController.edit)
+
 //Update Route
 router.post('/:id', ensureLoggedIn, vinylsController.update);
 

@@ -7,6 +7,7 @@ module.exports = {
     index,
     new: newVinyl,
     create,
+    edit,
     update,
     delete: deleteVinyl,
     show
@@ -49,6 +50,24 @@ async function create(req, res) {
         console.log(err);
         res.render('vinyls/new', { errorMsg: err.message });
     }   
+}
+
+
+async function edit(req, res) {
+    const vinylId = req.params.id;
+    const userId = req.user._id;
+    try {
+        //Find the vinyl post by its vinylId and user Id
+        const vinyl = await Vinyl.findOne({ _id: vinylId, user: userId });
+        //if the user doesn't exist
+        if (!vinyl) { 
+            return res.redirect(`/vinyls/${vinylId}`);
+        }
+        res.render('vinyls/edit', {title: 'Edit Vinyl', vinyl})
+    } catch (error) {
+        console.log(error);
+        res.redirect(`/vinyls/${vinylId}`);
+    }
 }
 
 
