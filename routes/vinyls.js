@@ -29,7 +29,7 @@ router.post('/', ensureLoggedIn, vinylsController.create);
 router.get('/:id/edit', vinylsController.edit)
 
 //Update Route
-router.post('/:id', ensureLoggedIn, vinylsController.update);
+router.put('/:id', ensureLoggedIn, vinylsController.update);
 
 
 //DELETE /vinyls
