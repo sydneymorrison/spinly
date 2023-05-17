@@ -7,6 +7,7 @@ module.exports = {
     index,
     new: newVinyl,
     create,
+    update,
     delete: deleteVinyl,
     show
 };
@@ -51,11 +52,43 @@ async function create(req, res) {
 }
 
 
+async function update(req, res) {
+    const vinylId = req.params.id;
+    const userId = req.user._id;
+    try {
+        //Find the vinyl post by its vinylId and user Id
+        const vinyl = await Vinyl.findOne({ _id: vinylId, user: userId });
+        //if the user doesn't exist
+        if (!vinyl) { 
+            return res.redirect(`/vinyls/${vinylId}`);
+    }
+
+    //Update the vinyl post with the new data
+    vinyl.title = req.body.title;
+    vinyl.artist = req.body.artist;
+    vinyl.releaseYear = req.body.releaseYear;
+    vinyl.genre = req.body.genre;
+    vinyl.condition = req.body.condition;
+    vinyl.exchangeType = req.body.exchangeType;
+    vinyl.price = req.body.price;
+
+    //Save the updated vinyl post
+    await vinyl.save();
+
+    //Redirect
+    res.redirect(`/vinyls/${vinylId}`);
+    } catch (error) {
+        console.log(error);
+        res.redirect(`/vinyls/${vinylId}`);
+    }
+}
+
+
 async function deleteVinyl(req, res) {
     const vinylId = req.params.id;
     const userId = req.user._id;
     try{
-    //Find the vinylID and the User Ide
+    //Find the vinylID and the User Id
     const vinyl = await Vinyl.findOne({ _id: vinylId, user: userId });
     
     //if the user doesn't exist

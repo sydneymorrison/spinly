@@ -19,9 +19,13 @@ router.get('/', vinylsController.index);
 router.get('/new', ensureLoggedIn, vinylsController.new);
 
 
+//Create ROUTE
 //POST /vinyls
 //Create a Record and display it on show page
 router.post('/', ensureLoggedIn, vinylsController.create);
+
+//Update Route
+router.post('/:id', ensureLoggedIn, vinylsController.update);
 
 
 //DELETE /vinyls

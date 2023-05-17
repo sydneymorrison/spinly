@@ -6,6 +6,7 @@
 <table id="list">
     <thead>
       <tr>
+        <th class="th">Username</th>
         <th class="th">Title</th>
         <th class="th">Artist</th>
         <th class="th">Release Year</th>
@@ -19,6 +20,7 @@
     <tbody>
     <% vinyls.forEach(function(v){ %>
         <tr>
+            <td><%= user.name %></td>
             <td class="td"><%= v.title %></td>
             <td class="td"> <%= v.artist %></td>
             <th class="th"><%= v.releaseYear %></th>

@@ -87,7 +87,8 @@ const vinylSchema = new Schema ({
     },
     price: {
         type: Number,
-        min: 0
+        min: 0,
+        default: 'N/A'
     },
 
     //Track the UserId from the User Model (Google)
