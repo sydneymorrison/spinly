@@ -8,6 +8,8 @@ var logger = require('morgan');
 var session = require('express-session');
 //Require Passport
 var passport = require('passport');
+//Method Override
+var methodOverride = require('method-override');
 
 //Load the "secrets" in the .env file
 require('dotenv').config();
@@ -34,6 +36,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//Method Override
+app.use(methodOverride('_method'));
 
 //Configure Session Middleware
 app.use(session({

@@ -3,6 +3,7 @@ var router = express.Router();
 
 //Controller for Vinyls
 const vinylsController = require('../controllers/vinyls');
+
 //Controller for Ensure Login
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
@@ -14,17 +15,24 @@ router.get('/', vinylsController.index);
 
 
 //GET /vinyls/new
-//Return view (form) to add a new post
+//Return view (form) to add a new post 
 router.get('/new', ensureLoggedIn, vinylsController.new);
-
-//GET /vinyls
-//Show I want to show the profile page of the person who posted the record
-router.get('/:id', vinylsController.show)
 
 
 //POST /vinyls
 //Create a Record and display it on show page
 router.post('/', ensureLoggedIn, vinylsController.create);
+
+
+//DELETE /vinyls
+//Delete Vinyls
+// DELETE /reviews/:id
+router.delete('/:id', ensureLoggedIn, vinylsController.delete);
+
+//GET /vinyls
+//Show I want to show the profile page of the person who posted the record
+//Show functionality must  be below new route
+router.get('/:id', ensureLoggedIn, vinylsController.show)
 
 
 

@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<title><%= title %></title>
+
 <section id="vinyl-details-heading">
 
     <!-- Profile Start -->
@@ -29,6 +31,12 @@
         <div>Price: </div>
         <div><%= vinyl.price %></div>
     </section>
+
+        <% if (user?._id.equals(vinyl.user)) { %>
+            <form action="/vinyls/<%= vinyl._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+            </form>
+        <% } %>
 
 <%- include('../partials/footer') %>
 

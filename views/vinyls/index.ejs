@@ -26,9 +26,13 @@
             <td class="td"><%= v.condition %></td>
             <td class="td"><%= v.exchangeType %></td>
             <td class="td"><%= v.price %></td>
-            <td><a href="/vinyls/<%= v._id %>">
-                <button>Vinyl Details</button>
-            </a></td>
+            <td>
+                <div>
+                    <a href="/vinyls/<%= v._id %>">
+                        <button>Vinyl Details</button>
+                    </a>
+                </div>
+            </td>
         </tr>
     <% }); %>
     </tbody>

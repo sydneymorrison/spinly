@@ -7,6 +7,7 @@ module.exports = {
     index,
     new: newVinyl,
     create,
+    delete: deleteVinyl,
     show
 };
 
@@ -50,13 +51,37 @@ async function create(req, res) {
 }
 
 
+async function deleteVinyl(req, res) {
+    const vinylId = req.params.id;
+    const userId = req.user._id;
+    try{
+    //Find the vinylID and the User Ide
+    const vinyl = await Vinyl.findOne({ _id: vinylId, user: userId });
+    
+    //if the user doesn't exist
+    if (!vinyl) { 
+        return res.redirect(`/vinyls/${vinylId}`);
+    }
+
+    //Remove the vinyl record from the database
+    await Vinyl.deleteOne({ _id: vinylId });
+
+    res.redirect('/vinyls');
+} catch (error) {
+    console.log(error);
+    res.redirect(`/vinyls/${vinylId}`);
+}
+}
+
+
 async function show(req, res) {
-   try{
-    const vinyl = await Vinyl.findById(req.params.id);
-    const user = req.user;
-    res.render('vinyls/show', { title: 'Vinyl Details', vinyl, user })
-} catch (err) {
-    console.log(err);
-    res.render('error', { errorMsg: 'Failed to retrieve vinyl details.' });
-}
-}
+    try{
+     const vinyl = await Vinyl.findById(req.params.id);
+     const user = req.user;
+     res.render('vinyls/show', { title: 'Vinyl Details', vinyl, user })
+ } catch (err) {
+     console.log(err);
+     res.render('error', { errorMsg: 'Failed to retrieve vinyl details.' });
+ }
+ }
+
