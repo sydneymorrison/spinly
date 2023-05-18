@@ -1,26 +1,28 @@
 <%- include('../partials/header') %>
 
 
-<h1><%= title %></h1>
+<section class="add-new-vinyl-form">
+
+<h1 class="h1-title"><%= title %></h1>
 
 <section id="form-page">
   <!-- Profile Start -->
   <div><%= user.name %></div>
   <div class="vinyl-user">
-    <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+    <img class="profile-avatar" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
   </div>
 </section>
 
 <!-- Record Submission Form -->
-<section id="submit-vinyl-section">
+<section id="add-new-vinyl-form">
     <form id="add-vinyl-submission-form" method="POST" action="/vinyls">
-    <label>Title:</label>
+    <label class="add-new-vinyl-form-text">Title:</label>
     <input type="text" name="title"><br>
-    <label>Artist:</label>
+    <label class="add-new-vinyl-form-text">Artist:</label>
     <input type="text" name="artist"><br>
-    <label>Release Year:</label>
+    <label class="add-new-vinyl-form-text">Release Year:</label>
     <input type="text" name="releaseYear"><br>
-    <label>Genre:</label>
+    <label class="add-new-vinyl-form-text">Genre:</label>
     <select name="genre">
         <option value="Pop">Pop</option>
         <option value="Rock">Rock</option>
@@ -44,7 +46,7 @@
         <option value="World">World</option>
         <option value="Other">Other</option>
     </select><br>
-    <label>Condition:</label>
+    <label class="add-new-vinyl-form-text">Condition:</label>
     <select name="condition">
         <option value="Poor">Poor</option>
         <option value="Fair">Fair</option>
@@ -52,14 +54,14 @@
         <option value="Very Good">Very Good</option>
         <option value="Mint" selected>Mint</option>
     </select><br>
-    <label>Exchange Type:</label>
+    <label class="add-new-vinyl-form-text">Exchange Type:</label>
     <select name="exchangeType" onchange="togglePriceField()">
         <option value="Trade">Trade</option>
         <option value="Sell">Sell</option>
         <option value="Buy">Buy</option>
     </select><br>
     <div id="priceField" >
-        <label>Price:</label>
+        <label class="add-new-vinyl-form-text">Price:</label>
         <input type="text" name="price" readonly><br>
     </div>
     <!-- Add Vinyl Button -->
@@ -82,5 +84,7 @@
             }
  } 
 </script>
+
+</section>
 
 <%- include('../partials/footer') %>

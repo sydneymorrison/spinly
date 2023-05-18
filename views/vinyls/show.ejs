@@ -1,6 +1,9 @@
 <%- include('../partials/header') %>
 
-<title><%= title %></title>
+
+<section class="vinyl-details-edit-delete-reviews">
+
+<h1 class="h1-title"><%= title %></h1>
 
 <section id="vinyl-details-heading">
 
@@ -8,7 +11,7 @@
     <% if (typeof user !== 'undefined' && user !== null) { %>
         <div><%= user.name %></div>
         <div class="vinyl-user">
-        <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+        <img class="profile-avatar" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
         </div>
     <% } %>
   </section>
@@ -16,20 +19,13 @@
 
   <!-- Vinyl Details -->
      <section class="vinyl-details">
-        <div>Title: </div>
-        <div><%= vinyl.title %></div>
-        <div>Artist: </div>
-        <div><%= vinyl.artist %></div>
-        <div>Release Year: </div>
-        <div><%= vinyl.releaseYear %></div>
-        <div>Genre: </div>
-        <div><%= vinyl.genre %></div>
-        <div>Condition: </div>
-        <div><%= vinyl.condition %></div>
-        <div>Exchange Type: </div>
-        <div><%= vinyl.exchangeType %></div>
-        <div>Price: </div>
-        <div><%= vinyl.price %></div>
+        <div><span class="show-vinyl-details-text">Title:</span> <span class="show-vinyl-details-text"><%= vinyl.title %></span></div>
+        <div><span class="show-vinyl-details-text">Artist:</span> <span class="show-vinyl-details-text"><%= vinyl.artist %></span></div>
+        <div><span class="show-vinyl-details-text">Release Year:</span> <span class="show-vinyl-details-text"><%= vinyl.releaseYear %></span></div>
+        <div><span class="show-vinyl-details-text">Genre:</span> <span class="show-vinyl-details-text"><%= vinyl.genre %></span></div>
+        <div><span class="show-vinyl-details-text">Condition:</span> <span class="show-vinyl-details-text"><%= vinyl.condition %></span></div>
+        <div><span class="show-vinyl-details-text">Exchange Type:</span> <span class="show-vinyl-details-text"><%= vinyl.exchangeType %></span></div>
+        <div><span class="show-vinyl-details-text">Price:</span> <span class="show-vinyl-details-text"><%= vinyl.price %></span></div>
     </section>
 
 
@@ -82,7 +78,7 @@
         <% vinyl.reviews.forEach(function(r) { %>
           <% total += r.rating %>
           <tr>
-            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+            <td class="review-user"><img class="profile-avatar-for-reviews" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.comment %></td>
             <td><%= r.rating %></td>
@@ -104,6 +100,8 @@
   <% } else { %>
     <h5>No Reviews Yet</h5>
   <% } %>
+
+</section>
 
 
 <%- include('../partials/footer') %>

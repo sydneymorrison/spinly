@@ -1,51 +1,59 @@
 * {
   box-sizing: border-box;
-}
-
-
-body {
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
-  display: grid;
-  padding: 10px;
-  box-sizing: border-box;
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* grid-template-rows: 50px 1fr 1fr 50px; */
-}
-/* 
-body div {
-  padding: 10px;
-  border: 1px solid black;
-} */
-
-#body-index-page {
-  display: grid;
-  box-sizing: border-box;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   margin: 0;
   padding: 0;
 }
 
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#nav-items {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+} 
+
+#body-index-page {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* background-image: url('https://cdn.britannica.com/18/19218-050-03EA5C8F/discs-polycarbonate-plastic.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 10px;
+  margin-top: 70px;
+  padding: 10px;
+}
+
 
 #landing-page-font {
-  /* display: flex; */
-  justify-content: center;
   /* font-family: 'Mothercode', sans-serif; */
   font-family: 'Aveneur', sans-serif;
-  font-size: 450px;
+  font-size: 400px;
   margin: 0px;
 
 }
 
 #landing-page-text {
-
   font-family: 'CMU Typewriter Text', sans-serif;
   font-size: 25px;
-  justify-content: center;
+  text-align: center;
 }
 
 a {
@@ -63,4 +71,62 @@ a {
 .login img {
   width: 30px;
   height: 30px;
+}
+
+
+.vinyl-feed{
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-new-vinyl-form {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.vinyl-details-edit-delete-reviews{
+  padding-top: 70px;
+  
+}
+
+.edit-vinyl{
+  padding-top: 70px;
+}
+
+.h1-title {
+  font-family: 'CMU Typewriter Text', sans-serif;
+  font-size: 80px;
+
+}
+
+.add-new-vinyl-form-text{
+  font-family: 'CMU Typewriter Text', sans-serif;
+  font-size: 35px;
+}
+
+.show-vinyl-details-text {
+  font-family: 'CMU Typewriter Text', sans-serif;
+  font-size: 20px;
+}
+
+.profile-avatar{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-avatar-for-reviews {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+
 }

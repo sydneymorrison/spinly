@@ -21,11 +21,10 @@
 
   <!-- CSS Style Sheet -->
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title><%= title %></title>
 </head>
 
 <body class="header">
-      <nav class="nav-items">
+      <nav class="nav-items" id="nav-items">
         <% if (user) { %>
           
           <!-- //Link for Feed Page  -->
@@ -43,5 +42,7 @@
           <a href="/auth/google" id="landing-page-google" id="nav-item" class="login">LOG IN&nbsp;<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"></a>
           <% } %>
       </nav>
+
+      <title><%= title %></title>
 <!-- <main>
 </main> -->
