@@ -127,13 +127,21 @@ async function deleteVinyl(req, res) {
 
 
 async function show(req, res) {
-    try{
-     const vinyl = await Vinyl.findById(req.params.id);
+     const vinylId = req.params.id;
      const user = req.user;
-     res.render('vinyls/show', { title: 'Vinyl Details', vinyl, user })
+    try{
+    // const vinyl = await Vinyl.findById(req.params.id).populate('user').populate('reviews.user');
+    // const vinyl = await Vinyl.findById(req.params.id).populate('reviews.user');
+    const vinyl = await Vinyl.findById(vinylId).populate('reviews.user').populate({ path: 'reviews.user', model: 'User' });
+
+    if (!vinyl) { 
+        return res.redirect(`/vinyls/${vinylId}`);
+    }
+
+    res.render('vinyls/show', { title: 'Vinyl Details', vinyl, user });
  } catch (err) {
      console.log(err);
-     res.render('error', { errorMsg: 'Failed to retrieve vinyl details.' });
+    //  res.render('err', { errorMsg: 'Failed to retrieve vinyl details.' });
  }
  }
 

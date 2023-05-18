@@ -3,16 +3,16 @@ const Schema = mongoose.Schema;
 
 
 const reviewSchema = new Schema ({
-    userId: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    vinylId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Vinyl',
-        required: true
-    },
+    // vinylId: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Vinyl',
+    //     required: true
+    // },
     rating: {
         type: Number,
         min: 1,
@@ -26,12 +26,8 @@ const reviewSchema = new Schema ({
         type: Date,
         default: Date.now
     },
-    //Add User Model to reference
-    userReview: {
-    type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  }
+    userName: String,
+    userAvatar: String,
 }, {
     timestamps: true
 });
@@ -88,7 +84,7 @@ const vinylSchema = new Schema ({
     price: {
         type: Number,
         min: 0,
-        default: 'N/A'
+        default: 0
     },
 
     //Track the UserId from the User Model (Google)
@@ -100,13 +96,10 @@ const vinylSchema = new Schema ({
     userName: String,
     userAvatar: String,
     userSeller: String,
-    reviews: [reviewSchema]
-    
-//     //Track the Seller from the User Model
-//     vinylSeller: {
-//     type: Schema.Types.ObjectId,
-//     ref: 'User'
-//   }
+    reviews: [reviewSchema],
+    metadataImage: {
+        type: String
+      }
 }, {
     timestamps: true
 });
