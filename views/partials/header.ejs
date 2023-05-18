@@ -4,27 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- font -->
+  <!-- Mothercodefint -->
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/mothercode');
+    </style>
+  <!-- Avenuer Font -->
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/aveneur');
+    </style>
+  <!-- CMU Typewriter Text -->
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/cmu-typewriter-text');
+    </style>
+
+  <!-- CSS Style Sheet -->
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= title %></title>
 </head>
 
 <body>
-    <nav>
+    <nav class="nav-items">
       <% if (user) { %>
         
         <!-- //Link for Feed Page  -->
-        <a href="/vinyls"	<%- title === 'Vinyl Feed' ? 'class="active"' : '' %>>VINYL FEED</a>
+        <a href="/vinyls" id="nav-item"	<%- title === 'Vinyl Feed' ? 'class="active"' : '' %>>VINYL FEED</a>
 
         <!-- //Link for New Vinyl Page  -->
-        <a href="/vinyls/new"	<%- title === 'Add New Vinyl' ? 'class="active"' : '' %>>ADD NEW VINYL</a>
+        <a href="/vinyls/new" id="nav-item"	<%- title === 'Add New Vinyl' ? 'class="active"' : '' %>>ADD NEW VINYL</a>
         
         <!-- //Link for Profile Page  -->
   
-        <a href="/logout">LOG OUT</a>
+        <a href="/logout" id="nav-item">LOG OUT</a>
       <% } else { %>
         <!-- //About Page  -->
-        <a href="/index" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF5zAa1Qoj6t1Mni_-A9zvCKNPTzQD0VYre8RDvBiBrg&s"></a>
+        <a href="/index" id="landing-page-about" id="nav-item" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+        <a href="/auth/google" id="landing-page-google" id="nav-item" class="login">LOG IN&nbsp;<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"></a>
         <% } %>
     </nav>
 <main>

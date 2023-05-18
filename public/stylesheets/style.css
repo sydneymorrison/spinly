@@ -1,18 +1,71 @@
 body {
+  position: relative;
+  height: 100vh;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  background-image: url("https://cdn.britannica.com/18/19218-050-03EA5C8F/discs-polycarbonate-plastic.jpg");
 }
 
+#landing-page {
+  /* font-family: 'Mothercode', sans-serif; */
+  display: flex;
+  position: absolute; 
+  margin-top: 200px;
+  margin-left: -90px; 
+  font-family: 'Aveneur', sans-serif;
+  font-size: 450px;
+  justify-content: center;
+  /* background-image: url("https://cdn.britannica.com/18/19218-050-03EA5C8F/discs-polycarbonate-plastic.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* background-color: indigo; */
+}
+
+#landing-page-text {
+  margin-top: 100px;
+  margin-bottom: -20px;
+  display: flex;
+  font-size: 25px;
+  font-family: 'CMU Typewriter Text', sans-serif;
+  justify-content: center;
+
+}
+
+.nav-items {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  color: black;
+
+}
+.nav-item {
+  display: flex;
+  justify-content: flex-end;
+  /* margin-right: 10px;
+  padding: 5px 30px; */
+}
+
+
+
 a {
-  color: #00B7FF;
+  /* color: #00B7FF; */
+  color: black;
 }
 
 /* //login CSS */
 .login {
-  font-size: 14px;
+  display: flex;
+  font-size: 18px;
+  justify-content: flex-end;
 }
 
 .login img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
