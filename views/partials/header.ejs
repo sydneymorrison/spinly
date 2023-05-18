@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,23 +24,24 @@
   <title><%= title %></title>
 </head>
 
-<body>
-    <nav class="nav-items">
-      <% if (user) { %>
-        
-        <!-- //Link for Feed Page  -->
-        <a href="/vinyls" id="nav-item"	<%- title === 'Vinyl Feed' ? 'class="active"' : '' %>>VINYL FEED</a>
+<body class="header">
+      <nav class="nav-items">
+        <% if (user) { %>
+          
+          <!-- //Link for Feed Page  -->
+          <a href="/vinyls" id="nav-item-1"	<%- title === 'Vinyl Feed' ? 'class="active"' : '' %>>VINYL FEED</a>
 
-        <!-- //Link for New Vinyl Page  -->
-        <a href="/vinyls/new" id="nav-item"	<%- title === 'Add New Vinyl' ? 'class="active"' : '' %>>ADD NEW VINYL</a>
-        
-        <!-- //Link for Profile Page  -->
-  
-        <a href="/logout" id="nav-item">LOG OUT</a>
-      <% } else { %>
-        <!-- //About Page  -->
-        <a href="/index" id="landing-page-about" id="nav-item" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
-        <a href="/auth/google" id="landing-page-google" id="nav-item" class="login">LOG IN&nbsp;<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"></a>
-        <% } %>
-    </nav>
-<main>
+          <!-- //Link for New Vinyl Page  -->
+          <a href="/vinyls/new" id="nav-item-2"	<%- title === 'Add New Vinyl' ? 'class="active"' : '' %>>ADD NEW VINYL</a>
+          
+          <!-- //Link for Profile Page  -->
+    
+          <a href="/logout" id="nav-item-3">LOG OUT</a>
+        <% } else { %>
+          <!-- //About Page  -->
+          <a href="/index" id="landing-page-about" id="nav-item" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+          <a href="/auth/google" id="landing-page-google" id="nav-item" class="login">LOG IN&nbsp;<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"></a>
+          <% } %>
+      </nav>
+<!-- <main>
+</main> -->

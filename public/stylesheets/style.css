@@ -1,57 +1,52 @@
-body {
-  position: relative;
-  height: 100vh;
-  padding: 50px;
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
-  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
-  overflow: hidden;
-  background-image: url("https://cdn.britannica.com/18/19218-050-03EA5C8F/discs-polycarbonate-plastic.jpg");
+* {
+  box-sizing: border-box;
 }
 
-#landing-page {
-  /* font-family: 'Mothercode', sans-serif; */
-  display: flex;
-  position: absolute; 
-  margin-top: 200px;
-  margin-left: -90px; 
-  font-family: 'Aveneur', sans-serif;
-  font-size: 450px;
-  justify-content: center;
-  /* background-image: url("https://cdn.britannica.com/18/19218-050-03EA5C8F/discs-polycarbonate-plastic.jpg"); */
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: grid;
+  padding: 10px;
+  box-sizing: border-box;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: 50px 1fr 1fr 50px; */
+}
+/* 
+body div {
+  padding: 10px;
+  border: 1px solid black;
+} */
+
+#body-index-page {
+  display: grid;
+  box-sizing: border-box;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: 100vh;
   margin: 0;
   padding: 0;
-  /* background-color: indigo; */
+}
+
+
+#landing-page-font {
+  /* display: flex; */
+  justify-content: center;
+  /* font-family: 'Mothercode', sans-serif; */
+  font-family: 'Aveneur', sans-serif;
+  font-size: 450px;
+  margin: 0px;
+
 }
 
 #landing-page-text {
-  margin-top: 100px;
-  margin-bottom: -20px;
-  display: flex;
-  font-size: 25px;
+
   font-family: 'CMU Typewriter Text', sans-serif;
+  font-size: 25px;
   justify-content: center;
-
 }
-
-.nav-items {
-  display: flex;
-  justify-content: flex-end;
-  justify-content: space-between;
-  color: black;
-
-}
-.nav-item {
-  display: flex;
-  justify-content: flex-end;
-  /* margin-right: 10px;
-  padding: 5px 30px; */
-}
-
-
 
 a {
   /* color: #00B7FF; */
