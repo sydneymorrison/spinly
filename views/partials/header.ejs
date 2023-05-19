@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- font -->
-  <!-- Mothercodefint -->
+  <!-- Fonts -->
+  <!-- Mothercodefont -->
   <style>
     @import url('https://fonts.cdnfonts.com/css/mothercode');
     </style>
@@ -38,11 +38,10 @@
           <a href="/logout" id="nav-item-3">LOG OUT</a>
         <% } else { %>
           <!-- //About Page  -->
-          <a href="/index" id="landing-page-about" id="nav-item" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+
+          <!-- Sign in with Google Link -->
           <a href="/auth/google" id="landing-page-google" id="nav-item" class="login">LOG IN&nbsp;<img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png"></a>
           <% } %>
       </nav>
 
       <title><%= title %></title>
-<!-- <main>
-</main> -->
