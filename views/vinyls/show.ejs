@@ -33,9 +33,11 @@
 
 
 <!-- Vinyl Show Details | Edit Button -->
+<% if (user?._id.equals(vinyl.user)) { %>
     <a href="/vinyls/<%= vinyl._id %>/edit">
         <button class="button" id="update-vinyl-button">Edit Vinyl Form</button>
     </a>
+<% } %>
 
     
 <!-- Vinyl Show Details | Delete Button -->

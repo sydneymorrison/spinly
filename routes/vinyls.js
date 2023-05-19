@@ -26,7 +26,7 @@ router.post('/', ensureLoggedIn, vinylsController.create);
 
 //Edit
 //GET /vinyls:id/edit
-router.get('/:id/edit', vinylsController.edit)
+router.get('/:id/edit', ensureLoggedIn, vinylsController.edit)
 
 //Update Route
 router.put('/:id', ensureLoggedIn, vinylsController.update);
