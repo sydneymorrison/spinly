@@ -22,7 +22,7 @@ technologies:
 
 # Getting Started
 
-To access the deployed Vinyl Record Exchange web app, please visit Link to deployed app.
+To access the deployed Vinyl Record Exchange web app, please visit: https://spinly.herokuapp.com/
 
 # Future Feature Enhancements
 
