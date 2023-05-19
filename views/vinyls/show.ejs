@@ -9,10 +9,13 @@
 
 <!-- Profile Start -->
     <% if (typeof user !== 'undefined' && user !== null) { %>
-        <div><%= user.name %></div>
+      
+      <div class="user-details">
+        <div class="username"> Added by: <%= user.name %></div>
         <div class="vinyl-user">
-        <img class="profile-avatar" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+        <img class="show-profile-avatar" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
         </div>
+      </div>
     <% } %>
   </section>
 
@@ -30,27 +33,27 @@
 
 
     <!-- Edit Button -->
-    <h2>Edit Vinyl</h2>
+    <!-- <h2>Edit Vinyl</h2> -->
     <a href="/vinyls/<%= vinyl._id %>/edit">
-        <button id="update-vinyl-button">Edit Vinyl Form</button>
+        <button class="button" id="update-vinyl-button">Edit Vinyl Form</button>
     </a>
 
     
     <!-- Delete Button -->
-    <h2>Delete Vinyl</h2>
+    <!-- <h2>Delete Vinyl</h2> -->
         <% if (user?._id.equals(vinyl.user)) { %>
             <form action="/vinyls/<%= vinyl._id %>?_method=DELETE" method="POST">
-            <button id="delete-button-for-vinyl" type="submit">Delete Vinyl</button>
+            <button class="button" id="delete-vinyl-button" type="submit">Delete Vinyl</button>
             </form>
         <% } %>
 
 <!-- Vinyl Review Field -->
-    <h2>Vinyl Reviews</h2>
+    <h2 class="vinyl-reviews-title" class="vinyl-reviews-submit-form">Vinyl Reviews</h2>
     <form id="add-review-form" method="POST"
         action="/vinyls/<%= vinyl._id %>/reviews">
-        <label>Review:</label>
-        <textarea name="comment"></textarea>
-        <label>Rating:</label>
+        <label class="show-vinyl-reviews-form-text" >Review:</label>
+        <textarea id="review-text-area" name="comment"></textarea>
+        <label class="show-vinyl-reviews-form-text">Rating:</label>
         <select name="rating">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -58,48 +61,50 @@
             <option value="4">4</option>
             <option value="5" selected>5</option>
         </select>
-        <input type="submit" value="Add Review">
+        <input class="button" type="submit" value="Add Review">
     </form>
 
 <!-- Vinyl Review Table Once Submitted -->
-<% if (vinyl.reviews.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Date</th>
-          <th>Review</th>
-          <th>Rating</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% let total = 0 %>
-        <% vinyl.reviews.forEach(function(r) { %>
-          <% total += r.rating %>
-          <tr>
-            <td class="review-user"><img class="profile-avatar-for-reviews" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.comment %></td>
-            <td><%= r.rating %></td>
-            <td>
-              <% if (user?._id.equals(r.user._id)) { %>
-                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                  <button id="delete-button-for-review" type="submit">X</button>
-                </form>
-              <% } %>
-            </td>
-          </tr>
-        <% }); %>
-        <tr>
-          <td colspan="3"></td>
-          <td><strong><%= (total / vinyl.reviews.length).toFixed(1) %></strong></td>
-        </tr>
-      </tbody>
-    </table>
-  <% } else { %>
-    <h5>No Reviews Yet</h5>
-  <% } %>
+<section class="reviews-table">
+    <% if (vinyl.reviews.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th class="reviews-table-text">User</th>
+              <th class="reviews-table-text"> Date</th>
+              <th class="reviews-table-text">Review</th>
+              <th class="reviews-table-text">Rating</th>
+              <th class="reviews-table-text"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let total = 0 %>
+            <% vinyl.reviews.forEach(function(r) { %>
+              <% total += r.rating %>
+              <tr>
+                <td class="reviews-table-text-comment" class="review-user"><img class="profile-avatar-for-reviews" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><span class="reviews-table-text-comment" ><%= r.userName %></span></td>
+                <td class="reviews-table-text-comment"><%= r.createdAt.toLocaleDateString() %></td>
+                <td class="reviews-table-text-comment"><%= r.comment %></td>
+                <td class="reviews-table-text-comment"><%= r.rating %></td>
+                <td>
+                  <% if (user?._id.equals(r.user._id)) { %>
+                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                      <button class="button" id="delete-button-for-review" type="submit">X</button>
+                    </form>
+                  <% } %>
+                </td>
+              </tr>
+            <% }); %>
+            <tr>
+              <td colspan="3"></td>
+              <td><strong><%= (total / vinyl.reviews.length).toFixed(1) %></strong></td>
+            </tr>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h5>No Reviews Yet</h5>
+      <% } %>
+</section>
 
 </section>
 

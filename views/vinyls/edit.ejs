@@ -6,9 +6,11 @@
 
 <section id="form-page">
   <!-- Profile Start -->
-  <div><%= user.name %></div>
-  <div class="vinyl-user">
-    <img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+  <div class="user-details">
+    <div class="username"> Added by: <%= user.name %></div>
+    <div class="vinyl-user">
+    <img class="show-profile-avatar" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+    </div>
   </div>
 </section>
 
@@ -16,13 +18,13 @@
 <!-- update value to PUT -->
 <section id="edit-vinyl-section">
     <form id="edit-vinyl-submission-form" method="POST" action="/vinyls/<%= vinyl._id %>?_method=PUT">
-    <label for="title">Title:</label>
+    <label for="title" class="edit-vinyl-details-text">Title:</label>
     <input type="text" name="title" id="title" value="<%= vinyl.title %>"><br>
-    <label for="artist">Artist:</label>
+    <label for="artist" class="edit-vinyl-details-text">Artist:</label>
     <input type="text" name="artist" id="artist" value="<%= vinyl.artist %>"><br>
-    <label for="releaseYear">Release Year:</label>
+    <label for="releaseYear" class="edit-vinyl-details-text">Release Year:</label>
     <input type="text" name="releaseYear" id="releaseYear" value="<%= vinyl.releaseYear %>"><br>
-    <label for="genre">Genre:</label>
+    <label for="genre" class="edit-vinyl-details-text">Genre:</label>
     <select name="genre" id="genre">
         <option value="Pop" <%= vinyl.genre === 'Pop' ? 'selected' : '' %>>Pop</option>
         <option value="Rock" <%= vinyl.genre === 'Rock' ? 'selected' : '' %>>Rock</option>
@@ -47,7 +49,7 @@
         <option value="Other" <%= vinyl.genre === 'Other' ? 'selected' : '' %>>Other</option>
     </select>
     <br>
-    <label for="condition">Condition:</label>
+    <label for="condition" class="edit-vinyl-details-text">Condition:</label>
     <select name="condition" id="condition">
             <option value="Poor" <%= vinyl.condition === 'Poor' ? 'selected' : '' %>>Poor</option>
             <option value="Fair" <%= vinyl.condition === 'Fair' ? 'selected' : '' %>>Fair</option>
@@ -55,19 +57,19 @@
             <option value="Very Good" <%= vinyl.condition === 'Very Good' ? 'selected' : '' %>>Very Good</option>
             <option value="Mint" <%= vinyl.condition === 'Mint' ? 'selected' : '' %>>Mint</option>
     </select><br>
-    <label for="exchangeType">Exchange Type:</label>
+    <label for="exchangeType" class="edit-vinyl-details-text">Exchange Type:</label>
     <select name="exchangeType" id="exchangeType" onchange="togglePriceField()">
     <option value="Trade" <%= vinyl.exchangeType === 'Trade' ? 'selected' : '' %>>Trade</option>
     <option value="Sell" <%= vinyl.exchangeType === 'Sell' ? 'selected' : '' %>>Sell</option>
     <option value="Buy" <%= vinyl.exchangeType === 'Buy' ? 'selected' : '' %>>Buy</option>
     </select><br>
     <div id="priceField">
-        <label for="price">Price:</label>
+        <label for="price" class="edit-vinyl-details-text">Price:</label>
         <input type="text" name="price" id="price" value="<%= vinyl.price %>" readonly><br>
     </div>
 
     <!-- Update Vinyl  -->
-    <input type="submit" value="Update Vinyl">
+    <input class="button" type="submit" value="Update Vinyl">
     </form>
 </section>
 
