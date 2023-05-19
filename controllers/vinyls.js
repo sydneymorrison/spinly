@@ -132,7 +132,7 @@ async function show(req, res) {
     try{
     // const vinyl = await Vinyl.findById(req.params.id).populate('user').populate('reviews.user');
     // const vinyl = await Vinyl.findById(req.params.id).populate('reviews.user');
-    const vinyl = await Vinyl.findById(vinylId).populate('reviews.user').populate({ path: 'reviews.user', model: 'User' });
+    const vinyl = await Vinyl.findById(vinylId).populate('user').populate('reviews.user').populate({ path: 'reviews.user', model: 'User' });
 
     if (!vinyl) { 
         return res.redirect(`/vinyls/${vinylId}`);

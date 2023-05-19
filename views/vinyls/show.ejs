@@ -11,9 +11,9 @@
     <% if (typeof user !== 'undefined' && user !== null) { %>
       
       <div class="user-details">
-        <div class="username"> Added by: <%= user.name %></div>
+        <div class="username"> Added by: <%= vinyl.user.name %></div>
         <div class="vinyl-user">
-        <img class="show-profile-avatar" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
+        <img class="show-profile-avatar" alt="avatar" src="<%= vinyl.user.avatar %>" referrerpolicy="no-referrer" >
         </div>
       </div>
     <% } %>
@@ -33,19 +33,18 @@
 
 
 <!-- Vinyl Show Details | Edit Button -->
-<% if (user?._id.equals(vinyl.user)) { %>
+
+<% if (user && vinyl.user.equals(user._id)) { %>
     <a href="/vinyls/<%= vinyl._id %>/edit">
         <button class="button" id="update-vinyl-button">Edit Vinyl Form</button>
     </a>
-<% } %>
 
     
 <!-- Vinyl Show Details | Delete Button -->
-        <% if (user?._id.equals(vinyl.user)) { %>
             <form action="/vinyls/<%= vinyl._id %>?_method=DELETE" method="POST">
             <button class="button" id="delete-vinyl-button" type="submit">Delete Vinyl</button>
             </form>
-        <% } %>
+  <% } %>
 
 <!-- Vinyl Show Details | Add Review Form -->
     <h2 class="vinyl-reviews-title" class="vinyl-reviews-submit-form">Vinyl Reviews</h2>
