@@ -3,8 +3,9 @@
 Vinyl Record Exchange is a web application designed specifically for vinyl record enthusiasts. It serves as a platform for buying, selling, and trading vinyl records, while also fostering a vibrant community for users to engage in discussions about their favorite albums. With its retro-inspired design reminiscent of popular e-commerce platforms, Vinyl Record Exchange aims to create a seamless and enjoyable experience for music lovers.
 
 # Screenshots
-<img width="554" alt="" src="">
-
+<!-- <img width="554" alt="" src=""> -->
+<img src="/images/spinly-landing.png" alt="Vinyl Logo">
+<img src="/images/spinly-feed.png" alt="Vinyl Logo">
 
 # Technologies Used
 The Vinyl Record Exchange web app utilizes the following 
