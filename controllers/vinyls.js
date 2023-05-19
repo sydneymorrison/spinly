@@ -130,8 +130,6 @@ async function show(req, res) {
      const vinylId = req.params.id;
      const user = req.user;
     try{
-    // const vinyl = await Vinyl.findById(req.params.id).populate('user').populate('reviews.user');
-    // const vinyl = await Vinyl.findById(req.params.id).populate('reviews.user');
     const vinyl = await Vinyl.findById(vinylId).populate('user').populate('reviews.user').populate({ path: 'reviews.user', model: 'User' });
 
     if (!vinyl) { 
@@ -141,7 +139,6 @@ async function show(req, res) {
     res.render('vinyls/show', { title: 'Vinyl Details', vinyl, user });
  } catch (err) {
      console.log(err);
-    //  res.render('err', { errorMsg: 'Failed to retrieve vinyl details.' });
  }
  }
 
