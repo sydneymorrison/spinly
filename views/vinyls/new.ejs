@@ -5,15 +5,16 @@
 
 <h1 class="h1-title"><%= title %></h1>
 
-<section id="form-page">
-  <!-- Profile Start -->
+ <!--User Details  -->
+
+<section id="user-details">
   <div><%= user.name %></div>
   <div class="vinyl-user">
     <img class="profile-avatar" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer" >
   </div>
 </section>
 
-<!-- Record Submission Form -->
+<!-- Add New Vinyl Submission Form -->
 <section id="add-new-vinyl-form">
     <form id="add-vinyl-submission-form" method="POST" action="/vinyls">
     <label class="add-new-vinyl-form-text">Title:</label>
@@ -64,12 +65,13 @@
         <label class="add-new-vinyl-form-text">Price:</label>
         <input type="text" name="price" readonly><br>
     </div>
-    <!-- Add Vinyl Button -->
+
+<!-- Add Vinyl Button -->
     <input class="button" type="submit" value="Add Vinyl">
     </form>
 </section>
 
-<!-- Javascript for price display function  -->
+<!-- Javascript for Price display function  -->
 <script>
  function togglePriceField() { 
             const priceField = document.getElementById('priceField');

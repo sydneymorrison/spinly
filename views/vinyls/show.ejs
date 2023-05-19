@@ -7,7 +7,7 @@
 
 <section id="vinyl-details-heading">
 
-<!-- Profile Start -->
+<!-- User Details -->
     <% if (typeof user !== 'undefined' && user !== null) { %>
       
       <div class="user-details">
@@ -20,7 +20,7 @@
   </section>
 
 
-  <!-- Vinyl Details -->
+<!-- Vinyl Show Details -->
      <section class="vinyl-details">
         <div><span class="show-vinyl-details-text">Title:</span> <span class="show-vinyl-details-text"><%= vinyl.title %></span></div>
         <div><span class="show-vinyl-details-text">Artist:</span> <span class="show-vinyl-details-text"><%= vinyl.artist %></span></div>
@@ -32,22 +32,20 @@
     </section>
 
 
-    <!-- Edit Button -->
-    <!-- <h2>Edit Vinyl</h2> -->
+<!-- Vinyl Show Details | Edit Button -->
     <a href="/vinyls/<%= vinyl._id %>/edit">
         <button class="button" id="update-vinyl-button">Edit Vinyl Form</button>
     </a>
 
     
-    <!-- Delete Button -->
-    <!-- <h2>Delete Vinyl</h2> -->
+<!-- Vinyl Show Details | Delete Button -->
         <% if (user?._id.equals(vinyl.user)) { %>
             <form action="/vinyls/<%= vinyl._id %>?_method=DELETE" method="POST">
             <button class="button" id="delete-vinyl-button" type="submit">Delete Vinyl</button>
             </form>
         <% } %>
 
-<!-- Vinyl Review Field -->
+<!-- Vinyl Show Details | Add Review Form -->
     <h2 class="vinyl-reviews-title" class="vinyl-reviews-submit-form">Vinyl Reviews</h2>
     <form id="add-review-form" method="POST"
         action="/vinyls/<%= vinyl._id %>/reviews">
@@ -64,7 +62,7 @@
         <input class="button" type="submit" value="Add Review">
     </form>
 
-<!-- Vinyl Review Table Once Submitted -->
+  <!-- Vinyl Show Details | Reviews Table After Review Form Submitted -->
 <section class="reviews-table">
     <% if (vinyl.reviews.length) { %>
         <table>

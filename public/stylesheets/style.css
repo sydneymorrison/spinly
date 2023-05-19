@@ -61,7 +61,7 @@ a {
   color: black;
 }
 
-/* //login CSS */
+/* login CSS */
 .login {
   display: flex;
   font-size: 18px;
@@ -95,7 +95,6 @@ a {
 
 /* Index - Vinyl Feed */
 
-
 .vinyl-feed{
   padding-top: 70px;
   display: flex;
@@ -106,7 +105,7 @@ a {
 
 
 
-/* New Page */
+/* New Page EJS */
 
 .add-new-vinyl-form {
   padding-top: 70px;
@@ -131,7 +130,7 @@ a {
 
 
 
-/* Show Page */
+/* Show Page EJS */
 
 .vinyl-details-edit-delete-reviews{
   padding-top: 70px;
@@ -141,7 +140,6 @@ a {
   justify-content: center;
   
 }
-
 
 .show-vinyl-details-text {
   font-family: 'CMU Typewriter Text', sans-serif;
@@ -158,9 +156,6 @@ a {
   font-size: 14px;
   transition: all 0.3s ease;
 }
-
-
-/* Show Page - Vinyl Reviews */
 
 
 .show-profile-avatar{
@@ -189,6 +184,8 @@ a {
   margin-top: 10px;
   margin-right: 340px;
 }
+
+/* Show Page EJS - Vinyl Reviews */
 
 .vinyl-reviews-submit-form{
   padding-top: 20px;
@@ -229,7 +226,7 @@ a {
 
 
 
-/* Edit Page */
+/* Edit Page EJS */
 .edit-vinyl{
   padding-top: 70px;
   display: flex;

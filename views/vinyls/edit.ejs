@@ -2,10 +2,11 @@
 
 
 <section class="edit-vinyl">
+    
 <h1 class="h1-title"><%= title %></h1>
 
-<section id="form-page">
-  <!-- Profile Start -->
+<!-- User Details -->
+<section id="user-details">
   <div class="user-details">
     <div class="username"> Added by: <%= user.name %></div>
     <div class="vinyl-user">
@@ -14,8 +15,7 @@
   </div>
 </section>
 
-<!-- Record Submission Form -->
-<!-- update value to PUT -->
+<!-- Record Submission Form / PUT -->
 <section id="edit-vinyl-section">
     <form id="edit-vinyl-submission-form" method="POST" action="/vinyls/<%= vinyl._id %>?_method=PUT">
     <label for="title" class="edit-vinyl-details-text">Title:</label>
@@ -68,7 +68,7 @@
         <input type="text" name="price" id="price" value="<%= vinyl.price %>" readonly><br>
     </div>
 
-    <!-- Update Vinyl  -->
+<!-- Update Vinyl  -->
     <input class="button" type="submit" value="Update Vinyl">
     </form>
 </section>
