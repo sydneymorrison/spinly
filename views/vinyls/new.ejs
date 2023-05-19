@@ -18,14 +18,14 @@
 <section id="add-new-vinyl-form">
     <form id="add-vinyl-submission-form" method="POST" action="/vinyls">
     <label class="add-new-vinyl-form-text">Title:</label>
-    <input type="text" name="title"><br>
+    <input class="input-text-field" type="text" name="title"><br>
     <label class="add-new-vinyl-form-text">Artist:</label>
-    <input type="text" name="artist"><br>
+    <input class="input-text-field" type="text" name="artist"><br>
     <label class="add-new-vinyl-form-text">Release Year:</label>
-    <input type="text" name="releaseYear"><br>
+    <input class="input-text-field" type="text" name="releaseYear"><br>
     <label class="add-new-vinyl-form-text">Genre:</label>
-    <select name="genre">
-        <option value="Pop">Pop</option>
+    <select class="input-text-field-select" name="genre">
+        <option class="input-text-field" value="Pop">Pop</option>
         <option value="Rock">Rock</option>
         <option value="Hip Hop">Hip Hop</option>
         <option value="R&B (Rhythm and Blues)">R&B (Rhythm and Blues)</option>
@@ -48,7 +48,7 @@
         <option value="Other">Other</option>
     </select><br>
     <label class="add-new-vinyl-form-text">Condition:</label>
-    <select name="condition">
+    <select class="input-text-field-select"  name="condition">
         <option value="Poor">Poor</option>
         <option value="Fair">Fair</option>
         <option value="Good">Good</option>
@@ -56,14 +56,14 @@
         <option value="Mint" selected>Mint</option>
     </select><br>
     <label class="add-new-vinyl-form-text">Exchange Type:</label>
-    <select name="exchangeType" onchange="togglePriceField()">
+    <select class="input-text-field-select" name="exchangeType" onchange="togglePriceField()">
         <option value="Trade">Trade</option>
         <option value="Sell">Sell</option>
         <option value="Buy">Buy</option>
     </select><br>
     <div id="priceField" >
         <label class="add-new-vinyl-form-text">Price:</label>
-        <input type="text" name="price" readonly><br>
+        <input class="input-text-field" type="text" name="price" readonly><br>
     </div>
 
 <!-- Add Vinyl Button -->

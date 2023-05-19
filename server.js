@@ -57,6 +57,9 @@ app.use(function (req, res, next) {
   next();
 });
 
+//For static images
+app.use(express.static('images'));
+
 //App Routers
 app.use('/', indexRouter);
 app.use('/vinyls', vinylsRouter);

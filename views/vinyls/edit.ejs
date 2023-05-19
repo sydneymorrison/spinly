@@ -2,7 +2,7 @@
 
 
 <section class="edit-vinyl">
-    
+
 <h1 class="h1-title"><%= title %></h1>
 
 <!-- User Details -->
@@ -19,11 +19,11 @@
 <section id="edit-vinyl-section">
     <form id="edit-vinyl-submission-form" method="POST" action="/vinyls/<%= vinyl._id %>?_method=PUT">
     <label for="title" class="edit-vinyl-details-text">Title:</label>
-    <input type="text" name="title" id="title" value="<%= vinyl.title %>"><br>
+    <input class="input-text-field" type="text" name="title" id="title" value="<%= vinyl.title %>"><br>
     <label for="artist" class="edit-vinyl-details-text">Artist:</label>
-    <input type="text" name="artist" id="artist" value="<%= vinyl.artist %>"><br>
+    <input class="input-text-field" type="text" name="artist" id="artist" value="<%= vinyl.artist %>"><br>
     <label for="releaseYear" class="edit-vinyl-details-text">Release Year:</label>
-    <input type="text" name="releaseYear" id="releaseYear" value="<%= vinyl.releaseYear %>"><br>
+    <input class="input-text-field" type="text" name="releaseYear" id="releaseYear" value="<%= vinyl.releaseYear %>"><br>
     <label for="genre" class="edit-vinyl-details-text">Genre:</label>
     <select name="genre" id="genre">
         <option value="Pop" <%= vinyl.genre === 'Pop' ? 'selected' : '' %>>Pop</option>
@@ -65,7 +65,7 @@
     </select><br>
     <div id="priceField">
         <label for="price" class="edit-vinyl-details-text">Price:</label>
-        <input type="text" name="price" id="price" value="<%= vinyl.price %>" readonly><br>
+        <input class="input-text-field" type="text" name="price" id="price" value="<%= vinyl.price %>" readonly><br>
     </div>
 
 <!-- Update Vinyl  -->

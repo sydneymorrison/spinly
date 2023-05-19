@@ -9,28 +9,30 @@
 <table id="list">
     <thead>
       <tr>
-        <th class="th">Username</th>
-        <th class="th">Title</th>
-        <th class="th">Artist</th>
-        <th class="th">Release Year</th>
-        <th class="th">Genre</th>
-        <th class="th">Condition</th>
-        <th class="th">Exchange Type</th>
-        <th class="th">Price</th>
+        <th class="vinyl-feed-table-title" class="th">User</th>
+        <th class="vinyl-feed-table-title" class="th">Username</th>
+        <th class="vinyl-feed-table-title" class="th">Title</th>
+        <th class="vinyl-feed-table-title" class="th">Artist</th>
+        <th class="vinyl-feed-table-title" class="th">Release Year</th>
+        <th class="vinyl-feed-table-title" class="th">Genre</th>
+        <th class="vinyl-feed-table-title" class="th">Condition</th>
+        <th class="vinyl-feed-table-title" class="th">Exchange Type</th>
+        <th class="vinyl-feed-table-title" class="th">Price</th>
 
       </tr>
     </thead>
     <tbody>
     <% vinyls.forEach(function(v){ %>
         <tr>
-            <td><%= user.name %></td>
-            <td class="td"><%= v.title %></td>
-            <td class="td"> <%= v.artist %></td>
-            <th class="th"><%= v.releaseYear %></th>
-            <td class="td"><%= v.genre %></td>
-            <td class="td"><%= v.condition %></td>
-            <td class="td"><%= v.exchangeType %></td>
-            <td class="td"><%= v.price %></td>
+            <td ><img class="vinyl-feed-avatar" src="<%= v.userAvatar %>" alt="User Avatar" class="avatar-image"></td>
+            <td class="vinyl-feed-table-text"><%= user.name %></td>
+            <td class="vinyl-feed-table-text" class="td"><%= v.title %></td>
+            <td class="vinyl-feed-table-text" class="td"> <%= v.artist %></td>
+            <th class="vinyl-feed-table-text" class="th"><%= v.releaseYear %></th>
+            <td class="vinyl-feed-table-text" class="td"><%= v.genre %></td>
+            <td class="vinyl-feed-table-text" class="td"><%= v.condition %></td>
+            <td class="vinyl-feed-table-text" class="td"><%= v.exchangeType %></td>
+            <td class="vinyl-feed-table-text" class="td"><%= v.price %></td>
             <td>
                 <div>
                     <a href="/vinyls/<%= v._id %>">

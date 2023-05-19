@@ -44,16 +44,18 @@ body {
 
 #landing-page-font {
   /* font-family: 'Mothercode', sans-serif; */
+  padding-top: 20px;
   font-family: 'Aveneur', sans-serif;
-  font-size: 400px;
+  font-size: 390px;
   margin: 0px;
-
+  margin-bottom: 100px;
 }
 
 #landing-page-text {
   font-family: 'CMU Typewriter Text', sans-serif;
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
+  margin-bottom: 160px;
 }
 
 a {
@@ -69,8 +71,8 @@ a {
 }
 
 .login img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .h1-title {
@@ -92,27 +94,118 @@ a {
 
 }
 
+.input-text-field{
+  width: 200px;
+  height: 20px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-text-field:focus {
+  border-color: black;
+}
+
+select {
+  color: black;
+  width: 200px;
+  height: 23px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+
+.footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  /* background-color: #f2f2f2; */
+  padding: 20px;
+  font-family: 'CMU Typewriter Text', sans-serif;
+  font-size: 15px;
+}
+
+
+.footer img{
+  width: 30px;
+  height: 30px;
+}
+
+.login img {
+  width: 10px;
+  height: 10px;
+}
+
 
 /* Index - Vinyl Feed */
 
 .vinyl-feed{
-  padding-top: 70px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background-image: url('https://media.istockphoto.com/id/1144959743/photo/pastel-colored-holographic-background.jpg?s=612x612&w=0&k=20&c=dkdzPDfLoLZOZ0PH9Y7pz3yzNR0PehsZgc7ZYKo-PwE=');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  min-height: 100vh;
 }
+
+
+.vinyl-feed-avatar{
+  display: flex;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 2px solid purple;
+}
+
+.vinyl-feed-table-title {
+  padding-top: 50px;
+  font-family: 'CMU Typewriter Text', sans-serif;
+  font-size: 25px;
+  padding: 5px;
+}
+
+.vinyl-feed-table-text {
+  /* font-family: 'CMU Typewriter Text', sans-serif; */
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  vertical-align: top;
+  padding: 8px;
+  text-align: center;
+}
+
+
+
 
 
 
 /* New Page EJS */
 
 .add-new-vinyl-form {
-  padding-top: 70px;
+  /* padding-top: 70px; */
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background-image: url('https://media.istockphoto.com/id/1144959743/photo/pastel-colored-holographic-background.jpg?s=612x612&w=0&k=20&c=dkdzPDfLoLZOZ0PH9Y7pz3yzNR0PehsZgc7ZYKo-PwE=');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  min-height: 100vh;
 }
 
 
@@ -121,11 +214,12 @@ a {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid purple;
 }
 
 .add-new-vinyl-form-text{
   font-family: 'CMU Typewriter Text', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 
@@ -133,17 +227,24 @@ a {
 /* Show Page EJS */
 
 .vinyl-details-edit-delete-reviews{
-  padding-top: 70px;
+  /* padding-top: 70px; */
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background-image: url('https://media.istockphoto.com/id/1144959743/photo/pastel-colored-holographic-background.jpg?s=612x612&w=0&k=20&c=dkdzPDfLoLZOZ0PH9Y7pz3yzNR0PehsZgc7ZYKo-PwE=');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  min-height: 100vh;
   
 }
 
 .show-vinyl-details-text {
   font-family: 'CMU Typewriter Text', sans-serif;
-  font-size: 21px;
+  font-size: 20px;
 }
 
 .button {
@@ -157,12 +258,18 @@ a {
   transition: all 0.3s ease;
 }
 
+.button:hover {
+  background-color: grey;
+  color: #fff;
+}
+
 
 .show-profile-avatar{
   width: 120px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid purple;
   
 }
 
@@ -173,6 +280,7 @@ a {
   object-fit: cover;
   margin-right: 10px;
   margin-bottom: 10px;
+  border: 2px solid purple;
 }
 
 #update-vinyl-button{
@@ -189,6 +297,7 @@ a {
 
 .vinyl-reviews-submit-form{
   padding-top: 20px;
+
 }
 
 .vinyl-reviews-title {
@@ -227,14 +336,20 @@ a {
 
 
 /* Edit Page EJS */
-.edit-vinyl{
-  padding-top: 70px;
+.edit-vinyl {
+  /* padding-top: 70px; */
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  background-image: url('https://media.istockphoto.com/id/1144959743/photo/pastel-colored-holographic-background.jpg?s=612x612&w=0&k=20&c=dkdzPDfLoLZOZ0PH9Y7pz3yzNR0PehsZgc7ZYKo-PwE=');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  min-height: 100vh;
 }
-
 
 .edit-vinyl-details-text {
   font-family: 'CMU Typewriter Text', sans-serif;

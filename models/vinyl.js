@@ -8,11 +8,6 @@ const reviewSchema = new Schema ({
         ref: 'User',
         required: true
     },
-    // vinylId: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Vinyl',
-    //     required: true
-    // },
     rating: {
         type: Number,
         min: 1,
