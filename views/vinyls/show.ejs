@@ -86,7 +86,7 @@
                 <td class="reviews-table-text-comment"><%= r.comment %></td>
                 <td class="reviews-table-text-comment"><%= r.rating %></td>
                 <td>
-                  <% if (user?._id.equals(r.user._id)) { %>
+                  <% if (user && r.user._id.equals(user._id)) { %>
                     <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
                       <button class="button" id="delete-button-for-review" type="submit">X</button>
                     </form>
