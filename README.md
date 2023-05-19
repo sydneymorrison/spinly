@@ -34,4 +34,4 @@ The following enhancements are planned for future development:
 5) Improve user interface and design elements to enhance user experience
 
 # Credits
-This game is developed by Sydney Morrison.
+This app is developed by Sydney Morrison.
